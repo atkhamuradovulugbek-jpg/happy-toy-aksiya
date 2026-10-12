@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<title>Pulim yo‘q — SPIN</title>
+<style>
+  @font-face { font-family: 'Montserrat'; font-weight: 500; src: url('/node_modules/@fontsource/montserrat/files/montserrat-latin-500-normal.woff2') format('woff2'); }
+  @font-face { font-family: 'Montserrat'; font-weight: 600; src: url('/node_modules/@fontsource/montserrat/files/montserrat-latin-600-normal.woff2') format('woff2'); }
+  @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('/node_modules/@fontsource/montserrat/files/montserrat-latin-700-normal.woff2') format('woff2'); }
+  @font-face { font-family: 'Montserrat'; font-weight: 800; src: url('/node_modules/@fontsource/montserrat/files/montserrat-latin-800-normal.woff2') format('woff2'); }
+  @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('/node_modules/@fontsource/montserrat/files/montserrat-latin-900-normal.woff2') format('woff2'); }
+  :root { --blue: #4f9bff; --amber: #ffb547; --red: #ff4d4d; --green: #35c27a; --ink: #0d1118; }
+  html, body { margin: 0; padding: 0; width: 1080px; height: 1920px; overflow: hidden; background: #000; }
+  body { font-family: 'Montserrat', sans-serif; color: #fff; }
+  #gl { position: absolute; inset: 0; width: 1080px; height: 1920px; display: block; }
+  .layer { position: absolute; opacity: 0; visibility: hidden; }
+
+  /* Kirish */
+  #intro { left: 0; right: 0; top: 120px; text-align: center; padding: 0 60px; }
+  #intro .q { display: inline-block; background: rgba(13,17,24,0.82); border-radius: 36px; padding: 34px 48px 38px; box-shadow: 0 20px 60px rgba(0,0,0,.35); }
+  #intro .big { font-weight: 900; font-size: 112px; line-height: 1; letter-spacing: -2px; }
+  #intro .big b { color: var(--amber); }
+  #intro .mid { font-weight: 700; font-size: 50px; margin-top: 18px; line-height: 1.2; }
+  #intro .small { font-weight: 600; font-size: 32px; margin-top: 22px; color: #9fc6ff; letter-spacing: 3px; text-transform: uppercase; }
+
+  #wrongChip { top: 90px; left: 50%; transform: translateX(-50%); background: rgba(200,40,40,.92); padding: 18px 34px; border-radius: 999px; font-weight: 800; font-size: 34px; letter-spacing: 2px; white-space: nowrap; }
+
+  /* SPIN paneli */
+  #spin { top: 70px; left: 0; right: 0; display: flex; flex-direction: column; align-items: center; }
+  #spin .row { display: flex; gap: 18px; background: rgba(13,17,24,.78); padding: 16px 22px; border-radius: 999px; }
+  #spin .pill { width: 86px; height: 86px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 46px; color: rgba(255,255,255,.45); border: 4px solid rgba(255,255,255,.22); box-sizing: border-box; }
+  #spin .pill.done { color: var(--green); border-color: var(--green); }
+  #spin .pill.on { background: var(--blue); color: #fff; border-color: var(--blue); box-shadow: 0 0 0 8px rgba(79,155,255,.25); }
+  #spinName { margin-top: 16px; font-weight: 800; font-size: 34px; letter-spacing: 3px; background: rgba(13,17,24,.78); padding: 10px 26px; border-radius: 999px; }
+
+  /* Sahna kartasi */
+  #card { top: 40%; left: 50%; transform: translate(-50%,-50%); width: 900px; text-align: center; background: rgba(13,17,24,.86); border-radius: 48px; padding: 60px 40px 56px; box-shadow: 0 30px 80px rgba(0,0,0,.45); }
+  #cardLetter { width: 220px; height: 220px; margin: 0 auto 30px; border-radius: 50%; background: var(--blue); display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 150px; box-shadow: 0 0 0 16px rgba(79,155,255,.22); }
+  #cardName { font-weight: 900; font-size: 74px; line-height: 1.12; letter-spacing: 1px; }
+  #cardName span { color: var(--amber); }
+  #cardHint { margin-top: 22px; font-weight: 600; font-size: 40px; color: #b9c7da; }
+  #card.special #cardName { font-size: 72px; }
+  #card.warn { background: rgba(40,14,10,.9); border: 4px solid var(--amber); }
+  #card.warn #cardName { color: var(--amber); }
+
+  /* Subtitr */
+  #sub { left: 44px; right: 44px; bottom: 200px; text-align: center; }
+  #sub .box { display: inline-block; background: rgba(9,11,16,.80); border-radius: 30px; padding: 22px 34px 28px; max-width: 960px; box-sizing: border-box; }
+  #subWho { font-weight: 800; font-size: 30px; letter-spacing: 3px; margin-bottom: 8px; }
+  #subWho::before { content: ''; display: inline-block; width: 16px; height: 16px; border-radius: 50%; background: var(--dot); margin-right: 12px; vertical-align: 2px; }
+  #subText { font-weight: 700; font-size: 52px; line-height: 1.28; color: #fff; }
+  #sub.narr #subText { font-style: normal; color: #f1f1f1; }
+  #sub.narr .box { background: rgba(30,30,34,.84); border: 3px solid rgba(255,255,255,.18); }
+
+  /* Xato muhri */
+  #mistake { top: 330px; left: 50%; width: 900px; text-align: center; border: 10px solid var(--red); border-radius: 28px; padding: 28px 30px; background: rgba(60,6,6,.55); box-sizing: border-box; }
+  #mistake .x { font-weight: 900; font-size: 110px; color: var(--red); letter-spacing: 4px; line-height: 1; }
+  #mistake .y { font-weight: 900; font-size: 58px; color: #fff; margin-top: 14px; line-height: 1.15; }
+
+  /* Orqaga */
+  #rewind { top: 90px; left: 70px; font-weight: 900; font-size: 64px; letter-spacing: 4px; color: #fff; text-shadow: 0 0 20px rgba(0,0,0,.6); }
+  #rewind span { font-size: 80px; margin-right: 16px; }
+  #glitch { inset: 0; background-image: repeating-linear-gradient(0deg, rgba(255,255,255,.07) 0 2px, transparent 2px 6px), linear-gradient(0deg, transparent 0 40%, rgba(255,255,255,.18) 40% 42%, transparent 42% 70%, rgba(255,255,255,.12) 70% 71%, transparent 71%); background-size: 100% 6px, 100% 400px; }
+
+  /* Tasavvur */
+  #imagine { top: 100px; left: 50%; transform: translateX(-50%); background: rgba(255,240,215,.95); color: #6b4a1a; font-weight: 900; font-size: 40px; letter-spacing: 6px; padding: 18px 40px; border-radius: 999px; }
+  #vignette { inset: 0; background: radial-gradient(ellipse at center, transparent 45%, rgba(60,38,10,.65) 100%); }
+
+  /* Xulosa kartasi */
+  #insight { top: 300px; left: 60px; right: 60px; background: rgba(255,255,255,.95); color: var(--ink); border-left: 16px solid var(--blue); border-radius: 22px; padding: 26px 32px; font-weight: 800; font-size: 44px; line-height: 1.22; box-shadow: 0 18px 50px rgba(0,0,0,.3); }
+
+  /* Rozilik banneri */
+  #consent { top: 300px; left: 60px; right: 60px; text-align: center; background: rgba(13,17,24,.86); border: 4px solid var(--green); border-radius: 30px; padding: 30px 30px; font-weight: 900; font-size: 54px; line-height: 1.2; }
+  #consent b { color: var(--green); }
+
+  #flash { inset: 0; background: #fff; }
+  #note { top: 110px; left: 60px; right: 60px; background: rgba(255,255,255,.96); color: var(--ink); border-radius: 26px; padding: 26px 34px 30px; border-left: 16px solid var(--blue); box-shadow: 0 18px 50px rgba(0,0,0,.3); }
+  #note .h { font-weight: 800; font-size: 30px; letter-spacing: 5px; color: #2f6fd6; }
+  #note .a { font-weight: 900; font-size: 50px; margin-top: 10px; line-height: 1.15; }
+  #note .b { font-weight: 700; font-size: 40px; margin-top: 10px; color: #c0392b; }
+
+  /* Yakun */
+  #final { inset: 0; background: linear-gradient(180deg, rgba(8,10,16,.55), rgba(8,10,16,.82)); }
+  #final .wrap { position: absolute; top: 420px; left: 70px; right: 70px; }
+  #final .fl { font-weight: 900; font-size: 92px; line-height: 1.08; margin-bottom: 44px; letter-spacing: -1px; }
+  #final .fl:nth-child(1) { color: #ff6b6b; }
+  #final .fl:nth-child(2) { color: var(--amber); }
+  #final .fl:nth-child(3) { color: var(--green); }
+  #final .tag { position: absolute; top: 210px; left: 70px; font-weight: 800; font-size: 34px; letter-spacing: 5px; color: #b9c7da; }
+
+  /* Javon yorliqlari */
+  .lbl { transform: translate(-50%, -100%); font-weight: 900; font-size: 38px; letter-spacing: 3px; padding: 14px 26px; border-radius: 18px; white-space: nowrap; box-shadow: 0 12px 30px rgba(0,0,0,.35); }
+  .lbl::after { content: ''; position: absolute; left: 50%; bottom: -16px; margin-left: -16px; border: 16px solid transparent; border-bottom: 0; border-top-color: inherit; }
+  #labelBig { background: var(--amber); color: #2b1a00; border-top-color: var(--amber); }
+  #labelGap { background: var(--red); color: #fff; border-top-color: var(--red); }
+</style>
+<script type="importmap">{ "imports": { "three": "/node_modules/three/build/three.module.js", "three/addons/": "/node_modules/three/examples/jsm/" } }</script>
+</head>
+<body>
+<canvas id="gl" width="1080" height="1920"></canvas>
+<div id="vignette" class="layer"></div>
+<div id="glitch" class="layer"></div>
+<div id="labelBig" class="layer lbl">ORTIQCHA ZAXIRA</div>
+<div id="labelGap" class="layer lbl">TUGAGAN</div>
+<div id="intro" class="layer"><div class="q"><div class="big"><b>“</b>Pulim yo‘q<b>”</b></div><div class="mid">Agent qanday javob berishi kerak?</div><div class="small">SPIN usuli · savdo agentlari uchun</div></div></div>
+<div id="wrongChip" class="layer">✕ NOTO‘G‘RI YONDASHUV</div>
+<div id="spin" class="layer"><div class="row"><div class="pill">S</div><div class="pill">P</div><div class="pill">I</div><div class="pill">N</div></div><div id="spinName"></div></div>
+<div id="insight" class="layer"></div>
+<div id="consent" class="layer">Avval <b>hisob</b> va <b>rozilik</b>.<br>Keyin buyurtma.</div>
+<div id="imagine" class="layer">TASAVVUR</div>
+<div id="mistake" class="layer"><div class="x">XATO:</div><div class="y">SABABNI BILMASDAN<br>KO‘NDIRISH</div></div>
+<div id="rewind" class="layer"><span>◀◀</span>ORQAGA</div>
+<div id="card" class="layer"><div id="cardLetter"></div><div id="cardName"></div><div id="cardHint"></div></div>
+<div id="final" class="layer"><div class="tag">ESDA TUTING</div><div class="wrap"><div class="fl">BAHSLASHMA.</div><div class="fl">SABABNI ANIQLA.</div><div class="fl">IMKONIYATGA MOS TAKLIF BER.</div></div></div>
+<div id="sub" class="layer"><div class="box"><div id="subWho"></div><div id="subText"></div></div></div>
+<div id="note" class="layer"><div class="h">ESLATMA</div><div class="a">Juma, soat 15:00 — qayta bog‘lanish</div><div class="b">Bu buyurtma emas</div></div>
+<div id="flash" class="layer"></div>
+<script type="module">
+  for (const w of [500, 600, 700, 800, 900]) await document.fonts.load(`${w} 40px Montserrat`, 'o‘ʼ’AaQq');
+  await import('./main.js');
+</script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "happy-toy-spin-video",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "render": "node render.mjs"
+  },
+  "dependencies": {
+    "@fontsource/montserrat": "5.1.0",
+    "three": "0.170.0"
+  }
+}

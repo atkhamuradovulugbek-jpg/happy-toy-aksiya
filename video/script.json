@@ -1,0 +1,113 @@
+{
+  "title": "“Pulim yo‘q” — agent qanday javob berishi kerak?",
+  "subtitle": "SPIN usuli: oddiy do‘kon suhbatida",
+  "speakers": {
+    "agent": { "label": "AGENT", "color": "#4F9BFF" },
+    "shop": { "label": "DO‘KONCHI", "color": "#FFB547" },
+    "narr": { "label": "DIKTOR", "color": "#E6E6E6" }
+  },
+  "scenes": [
+    {
+      "id": 1,
+      "name": "Noto‘g‘ri yondashuv",
+      "events": [
+        { "t": "beat", "id": "s1_intro", "dur": 4.2, "shot": "walkin", "agent": "walkin", "shop": "notebook", "overlay": "intro", "sfx": "doorbell" },
+        { "t": "line", "id": "s1_l1", "who": "shop", "text": "Bugun buyurtma bermayman. Pulim yo‘q.", "shot": "cu_shop", "shop": "notebook_talk", "agent": "listen" },
+        { "t": "line", "id": "s1_l2", "who": "agent", "text": "Aka, oling! Mahsulot zo‘r, hamma olyapti. Siz ham olib qo‘ying!", "shot": "cu_agent", "agent": "talk_hurry", "shop": "listen_cold", "tempo": 1.08, "gap": 0.3 },
+        { "t": "line", "id": "s1_l3", "who": "shop", "text": "Pulim yo‘q dedim-ku.", "shot": "two", "shop": "refuse", "agent": "listen_hurry", "gap": 0.2, "hold": "freeze" },
+        { "t": "freeze", "id": "s1_freeze", "dur": 1.4, "overlay": "mistake", "sfx": "stamp" },
+        { "t": "line", "id": "s1_n1", "who": "narr", "text": "Agent mahsulotini maqtadi, lekin do‘konchining muammosini aniqlamadi. Endi boshqacha gaplashamiz.", "freeze": true, "overlay": "mistake" },
+        { "t": "rewind", "id": "s1_rewind", "dur": 1.8, "sfx": "rewind" }
+      ]
+    },
+    {
+      "id": 2,
+      "letter": "S",
+      "name": "VAZIYAT",
+      "hint": "Vaziyatni aniqlash",
+      "events": [
+        { "t": "title", "id": "s2_title", "dur": 2.0, "shot": "wide" },
+        { "t": "line", "id": "s2_l1", "who": "shop", "text": "Bugun buyurtma bermayman. Pulim yo‘q.", "shot": "cu_shop", "shop": "notebook_talk", "agent": "listen" },
+        { "t": "line", "id": "s2_l2", "who": "agent", "text": "Tushundim, aka. Hozir xaridga mablag‘ ajratish qiyinmi yoki buyurtma bo‘yicha boshqa xavotiringiz ham bormi?", "shot": "cu_agent", "agent": "talk_calm", "shop": "listen" },
+        { "t": "line", "id": "s2_l3", "who": "shop", "text": "Ozroq pul bor. Lekin oldingi olgan tovarlarim hali turibdi. Yana pulimni tovarga bog‘lagim yo‘q.", "shot": "cu_shop", "shop": "talk_explain", "agent": "listen_nod" },
+        { "t": "line", "id": "s2_l4", "who": "agent", "text": "Demak, yana tovar olib, sotilmay qolishidan xavotirdasiz?", "shot": "two", "agent": "talk_calm", "shop": "listen" },
+        { "t": "line", "id": "s2_l5", "who": "shop", "text": "Ha, aynan shundan.", "shot": "cu_shop", "shop": "talk_nod", "agent": "listen" },
+        { "t": "line", "id": "s2_n1", "who": "narr", "text": "Bu misolda mablag‘ cheklangan. Asosiy xavotir esa yangi tovar ham turib qolishi.", "shot": "wide_slow", "agent": "idle", "shop": "idle", "overlay": "s_note" }
+      ]
+    },
+    {
+      "id": 3,
+      "letter": "P",
+      "name": "MUAMMO",
+      "hint": "Muammoni aniqlash",
+      "events": [
+        { "t": "title", "id": "s3_title", "dur": 2.0, "shot": "wide" },
+        { "t": "line", "id": "s3_l1", "who": "agent", "text": "Hozir qaysi mahsulotlaringiz sekin sotilyapti?", "shot": "cu_agent", "agent": "talk_calm", "shop": "listen" },
+        { "t": "line", "id": "s3_l2", "who": "shop", "text": "Mana shu katta qadoqlar. Ko‘p olib qo‘yganman.", "shot": "shelf_big", "shop": "point_big", "agent": "look_shelf_big", "highlight": "big" },
+        { "t": "line", "id": "s3_l3", "who": "agent", "text": "Xaridorlar so‘rayotgan, lekin sizda tugagan mahsulotlar-chi?", "shot": "cu_agent", "agent": "talk_calm", "shop": "listen" },
+        { "t": "line", "id": "s3_l4", "who": "shop", "text": "Mayda shirinliklardan ayrimlari tugagan. Shularni so‘rab turishibdi.", "shot": "shelf_gap", "shop": "point_gap", "agent": "look_shelf_gap", "highlight": "gap" },
+        { "t": "line", "id": "s3_n1", "who": "narr", "text": "Muammo aniqlandi: ayrim tovar ortiqcha, so‘ralayotgan ayrim tovar esa yo‘q.", "shot": "shelf_both", "agent": "idle", "shop": "idle", "highlight": "both" }
+      ]
+    },
+    {
+      "id": 4,
+      "letter": "I",
+      "name": "OQIBAT",
+      "hint": "Muammoning oqibati",
+      "events": [
+        { "t": "title", "id": "s4_title", "dur": 2.0, "shot": "wide" },
+        { "t": "line", "id": "s4_l1", "who": "agent", "text": "So‘ragan mahsuloti bo‘lmasa, xaridor odatda nima qiladi?", "shot": "cu_agent", "agent": "talk_calm", "shop": "listen" },
+        { "t": "line", "id": "s4_l2", "who": "shop", "text": "Ba’zisi boshqasini oladi. Ba’zisi qo‘shni do‘konga ketadi.", "shot": "cu_shop", "shop": "talk_explain", "agent": "listen_nod" },
+        { "t": "beat", "id": "s4_imagine", "dur": 5.2, "shot": "imagine", "agent": "away", "shop": "imagine", "customer": "leave", "overlay": "imagine", "sfx": "doorbell_late" },
+        { "t": "line", "id": "s4_l3", "who": "agent", "text": "Bu sizning savdongizga qanday ta’sir qilyapti?", "shot": "cu_agent", "agent": "talk_calm", "shop": "listen" },
+        { "t": "line", "id": "s4_l4", "who": "shop", "text": "O‘sha sotuvdan qolaman. Pulim esa sekin sotilayotgan tovarda turibdi.", "shot": "cu_shop", "shop": "talk_explain", "agent": "listen_nod" },
+        { "t": "line", "id": "s4_n1", "who": "narr", "text": "Agent qo‘rqitmadi. Muammoning ta’sirini do‘konchining o‘zi tushuntirdi.", "shot": "wide_slow", "agent": "idle", "shop": "idle" }
+      ]
+    },
+    {
+      "id": 5,
+      "letter": "N",
+      "name": "YECHIMNING FOYDASI",
+      "hint": "Foydani do‘konchi o‘zi aytadi",
+      "events": [
+        { "t": "title", "id": "s5_title", "dur": 2.0, "shot": "wide" },
+        { "t": "line", "id": "s5_l1", "who": "agent", "text": "So‘ralayotgan turlarni ortiqcha zaxirasiz, sotishingizga mos miqdorda to‘ldirish sizga nimasi bilan foydali bo‘lardi?", "shot": "cu_agent", "agent": "talk_calm", "shop": "listen_think" },
+        { "t": "line", "id": "s5_l2", "who": "shop", "text": "Xaridor so‘raganini topadi. Men ham keragidan ko‘p tovar olib qo‘ymayman.", "shot": "cu_shop", "shop": "talk_explain", "agent": "listen_nod" },
+        { "t": "line", "id": "s5_l3", "who": "agent", "text": "Demak, sizga katta buyurtma emas, kerakli assortiment va to‘g‘ri miqdor muhim?", "shot": "two", "agent": "talk_calm", "shop": "listen" },
+        { "t": "line", "id": "s5_l4", "who": "shop", "text": "To‘g‘ri.", "shot": "cu_shop", "shop": "talk_nod", "agent": "listen" },
+        { "t": "line", "id": "s5_n1", "who": "narr", "text": "E’tibor bering: yechimning foydasini agent emas, do‘konchining o‘zi aytdi.", "shot": "wide_slow", "agent": "idle", "shop": "idle" }
+      ]
+    },
+    {
+      "id": 6,
+      "letter": "+",
+      "name": "BUDJET + TALAB + TO‘G‘RI MIQDOR",
+      "hint": "Imkoniyatga mos taklif",
+      "events": [
+        { "t": "title", "id": "s6_title", "dur": 2.4, "shot": "wide" },
+        { "t": "line", "id": "s6_l1", "who": "agent", "text": "Boshqa to‘lovlaringizga xalaqit bermasdan, shu xaridga qancha mablag‘ ajrata olasiz?", "shot": "cu_agent", "agent": "talk_calm", "shop": "listen_think" },
+        { "t": "line", "id": "s6_l2", "who": "shop", "text": "Ko‘pi bilan uch yuz ming so‘m.", "shot": "cu_shop", "shop": "talk_think", "agent": "listen" },
+        { "t": "line", "id": "s6_l3", "who": "agent", "text": "Unda shu chegaradan oshmaymiz. Avval sotilgan miqdor va tokchadagi qoldiqni ko‘rib chiqamiz. Narx va ombordagi mavjudlikni tekshirib, kerakli buyurtmani hisoblaymizmi?", "shot": "cu_agent", "agent": "talk_tablet", "shop": "listen_nod" },
+        { "t": "line", "id": "s6_l4", "who": "shop", "text": "Mayli, avval hisobini ko‘raylik.", "shot": "cu_shop", "shop": "talk_nod", "agent": "listen" },
+        { "t": "beat", "id": "s6_tablet", "dur": 6.0, "shot": "tablet", "agent": "tablet_show", "shop": "look_tablet", "overlay": "consent" }
+      ]
+    },
+    {
+      "id": 7,
+      "letter": "!",
+      "name": "BOSHQA HOLAT: XARIDGA MABLAG‘ YO‘Q",
+      "hint": "Majburlamaymiz — qayta bog‘lanamiz",
+      "events": [
+        { "t": "title", "id": "s7_title", "dur": 2.6, "shot": "wide", "transition": "flash" },
+        { "t": "line", "id": "s7_n1", "who": "narr", "text": "Lekin do‘konchida haqiqatan pul bo‘lmasa-chi? Unda xaridni majburlamaymiz.", "shot": "wide_slow", "agent": "idle", "shop": "idle" },
+        { "t": "line", "id": "s7_l1", "who": "shop", "text": "Yo‘q, hozir umuman mablag‘ ajrata olmayman. Payshanbadan keyin hisobimni ko‘raman.", "shot": "cu_shop", "shop": "talk_sorry", "agent": "listen_nod" },
+        { "t": "line", "id": "s7_l2", "who": "agent", "text": "Tushundim, aka. Hozir buyurtma qilmaymiz. Juma kuni soat uchda bog‘lanib, vaziyatni aniqlashtirsam bo‘ladimi?", "shot": "cu_agent", "agent": "talk_calm", "shop": "listen" },
+        { "t": "line", "id": "s7_l3", "who": "shop", "text": "Ha, shu vaqt qulay.", "shot": "two", "shop": "talk_nod", "agent": "listen" },
+        { "t": "beat", "id": "s7_note", "dur": 4.6, "shot": "tablet_note", "agent": "tablet_write", "shop": "idle", "overlay": "note" },
+        { "t": "final", "id": "s7_final", "dur": 3.0, "shot": "final", "agent": "idle", "shop": "idle", "overlay": "final" },
+        { "t": "line", "id": "s7_n2", "who": "narr", "text": "Maqsad har qanday yo‘l bilan sotish emas. Maqsad do‘konchiga mos yechimni topish.", "shot": "final", "agent": "idle", "shop": "idle", "overlay": "final" },
+        { "t": "beat", "id": "s7_end", "dur": 2.5, "shot": "final", "agent": "idle", "shop": "idle", "overlay": "final" }
+      ]
+    }
+  ]
+}
