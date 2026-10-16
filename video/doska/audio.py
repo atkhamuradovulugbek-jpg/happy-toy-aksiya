@@ -44,6 +44,8 @@ def main():
         a = int(t0 * SR)
         fx[a:a + len(s)] += s[: max(0, n - a)]
     music = synth_music(dur)[:n] * 10 ** (-24 / 20)
+    if voice:
+        fx *= 0.6
     mix = fx + music
     if voice:
         v, sr = sf.read(voice, dtype="float32", always_2d=True)
