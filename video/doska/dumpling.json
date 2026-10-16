@@ -1,21 +1,86 @@
 {
   "title": "Ruchkani sotib ber — Dumpling misolida",
-  "voice": { "exaggeration": 0.6, "cfg_weight": 0.5, "temperature": 0.8 },
+  "voice": {
+    "exaggeration": 0.6,
+    "cfg_weight": 0.5,
+    "temperature": 0.8
+  },
   "segments": [
-    { "id": "n1", "text": "«Menga shu ruchkani sotib ber». Bu dunyodagi eng mashhur sotuv testi.", "pause": 0.5 },
-    { "id": "n2", "text": "Ko‘pchilik darhol ruchkani maqtay boshlaydi.", "pause": 0.3 },
-    { "id": "n3", "text": "Jordan Belfort esa boshqacha qiladi: u avval savol beradi.", "pause": 0.6 },
-    { "id": "n4", "text": "Endi buni o‘z ishimizga qo‘llaymiz.", "pause": 0.3 },
-    { "id": "n5", "text": "Mahsulot: Dumpling o‘yinchog‘i. Blokda o‘n ikki dona.", "pause": 0.3 },
-    { "id": "n6", "text": "Do‘konga donasi o‘n besh ming so‘m, bir blok esa bir yuz sakson ming so‘m.", "pause": 0.6 },
-    { "id": "n7", "text": "Ko‘p agentlar nima deydi? Zo‘r o‘yinchoq! Juda arzon! Hamma olyapti!", "pause": 0.3, "exaggeration": 0.9 },
-    { "id": "n8", "text": "Bu xato. Do‘konchi bunday gaplarni har kuni eshitadi.", "pause": 0.6 },
-    { "id": "n9", "text": "To‘g‘ri yo‘l — savol berish.", "pause": 0.3 },
-    { "id": "n10", "text": "Qaysi o‘yinchoqlar tez sotiladi?", "pause": 0.25 },
-    { "id": "n11", "text": "Xaridorlar odatda qanday narxdagisini so‘raydi?", "pause": 0.25 },
-    { "id": "n12", "text": "Hozir javoningizda nima yetishmayapti?", "pause": 0.6 },
-    { "id": "n13", "text": "Agar do‘konchi «menga kerak emas» desa, majburlamang.", "pause": 0.3 },
-    { "id": "n14", "text": "Rahmat aytib, keyingi do‘konga o‘ting.", "pause": 0.6 },
-    { "id": "n15", "text": "Esda tuting: avval ehtiyoj, keyin taklif.", "pause": 1.2 }
+    {
+      "id": "n1",
+      "text": "«Menga shu ruchkani sotib ber». Bu dunyodagi eng mashhur sotuv testi.",
+      "pause": 0.5
+    },
+    {
+      "id": "n2",
+      "text": "Ko‘pchilik darhol ruchkani maqtay boshlaydi.",
+      "pause": 0.3
+    },
+    {
+      "id": "n3",
+      "text": "Jordan Belfort esa boshqacha qiladi: u avval savol beradi.",
+      "pause": 0.6
+    },
+    {
+      "id": "n4",
+      "text": "Endi buni o‘z ishimizga qo‘llaymiz.",
+      "pause": 0.3
+    },
+    {
+      "id": "n5",
+      "text": "Mahsulotimiz: Dumpling o‘yinchog‘i. Bir blokda o‘n ikki dona.",
+      "pause": 0.3
+    },
+    {
+      "id": "n6",
+      "text": "Do‘konga donasi o‘n besh ming so‘m, bir blok esa bir yuz sakson ming so‘m.",
+      "pause": 0.6
+    },
+    {
+      "id": "n7",
+      "text": "Ko‘p agentlar nima deydi? Zo‘r o‘yinchoq! Juda arzon! Hamma olyapti!",
+      "pause": 0.3,
+      "exaggeration": 0.9
+    },
+    {
+      "id": "n8",
+      "text": "Bu xato. Do‘konchi bunday gaplarni har kuni eshitadi.",
+      "pause": 0.6
+    },
+    {
+      "id": "n9",
+      "text": "To‘g‘ri yo‘l — savol berish.",
+      "pause": 0.3
+    },
+    {
+      "id": "n10",
+      "text": "Qaysi o‘yinchoqlar tez sotiladi?",
+      "pause": 0.25
+    },
+    {
+      "id": "n11",
+      "text": "Xaridorlar odatda qanday narxdagisini so‘raydi?",
+      "pause": 0.25
+    },
+    {
+      "id": "n12",
+      "text": "Hozir javoningizda nima yetishmayapti?",
+      "pause": 0.6
+    },
+    {
+      "id": "n13",
+      "text": "Agar do‘konchi «menga kerak emas» desa, majburlamang.",
+      "pause": 0.3
+    },
+    {
+      "id": "n14",
+      "text": "Rahmat aytib, keyingi do‘konga o‘ting.",
+      "pause": 0.6
+    },
+    {
+      "id": "n15",
+      "text": "Esda tuting: avval ehtiyoj, keyin taklif.",
+      "pause": 1.2
+    }
   ]
 }
