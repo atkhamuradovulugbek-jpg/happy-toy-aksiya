@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<title>Doska</title>
+<style>
+  @font-face { font-family: 'Kalam'; font-weight: 700; src: url('/node_modules/@fontsource/kalam/files/kalam-latin-700-normal.woff2') format('woff2'); }
+  @font-face { font-family: 'Kalam'; font-weight: 700; src: url('/node_modules/@fontsource/kalam/files/kalam-latin-ext-700-normal.woff2') format('woff2'); unicode-range: U+0100-024F, U+1E00-1EFF; }
+  @font-face { font-family: 'Patrick Hand'; font-weight: 400; src: url('/node_modules/@fontsource/patrick-hand/files/patrick-hand-latin-400-normal.woff2') format('woff2'); }
+  @font-face { font-family: 'Patrick Hand'; font-weight: 400; src: url('/node_modules/@fontsource/patrick-hand/files/patrick-hand-latin-ext-400-normal.woff2') format('woff2'); unicode-range: U+0100-024F, U+1E00-1EFF; }
+  :root { --bg: #2a1663; --white: #f5f1e8; --yellow: #f7c548; --pink: #ff5c8a; --green: #52d6a0; --blue: #7cc4ff; }
+  html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: var(--bg); }
+  #view { position: absolute; inset: 0; overflow: hidden;
+    background: radial-gradient(ellipse at 50% 40%, #33197a 0%, #2a1663 55%, #1d0f47 100%); }
+  #board { position: absolute; left: 0; top: 0; width: 1080px; transform-origin: 0 0; }
+  #grid { position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(255,255,255,.055) 2px, transparent 2px), linear-gradient(90deg, rgba(255,255,255,.055) 2px, transparent 2px);
+    background-size: 54px 54px; }
+  #ink { position: absolute; left: 0; top: 0; overflow: visible; }
+  .t { position: absolute; white-space: nowrap; text-transform: uppercase; line-height: 1; letter-spacing: .5px; }
+  .t.title { font-family: 'Kalam', cursive; font-weight: 700; }
+  .t.body { font-family: 'Patrick Hand', cursive; }
+  .mark { position: absolute; border-radius: 10px; transform-origin: left center; }
+  .photo { position: absolute; background: #f7f3ea; padding: 14px 14px 46px; box-shadow: 0 14px 30px rgba(0,0,0,.45); transform-origin: center; }
+  .photo .img { width: 100%; height: 100%; overflow: hidden; }
+  .photo .cap { position: absolute; left: 0; right: 0; bottom: 10px; text-align: center; font-family: 'Patrick Hand', cursive; font-size: 26px; color: #3a3550; text-transform: uppercase; }
+  .photo .tape { position: absolute; top: -16px; left: 50%; width: 110px; height: 30px; margin-left: -55px; background: rgba(247,197,72,.85); transform: rotate(-3deg); }
+  .stamp { position: absolute; font-family: 'Kalam', cursive; font-weight: 700; text-transform: uppercase; border: 6px solid currentColor; border-radius: 14px; padding: 6px 22px 2px; line-height: 1; }
+  #hand { position: absolute; left: 0; top: 0; width: 1892px; height: 2024px; transform-origin: 0 0; pointer-events: none; }
+  #fade { position: absolute; inset: 0; background: #000; opacity: 0; }
+</style>
+<script type="importmap">{ "imports": {} }</script>
+</head>
+<body>
+<div id="view">
+  <div id="board"><div id="grid"></div><svg id="ink" xmlns="http://www.w3.org/2000/svg"></svg></div>
+  <svg id="hand" viewBox="0 0 860 920" xmlns="http://www.w3.org/2000/svg">
+    <!-- Yeng va bilakuzuk -->
+    <polygon points="118.5,220.9 211.5,139.1 815,805 702,904" fill="#7c52d0" stroke="#2b1a4f" stroke-width="4"/>
+    <polygon points="109.6,216.8 208.6,129.7 222.4,145.2 123.4,232.3" fill="#f3c623" stroke="#2b1a4f" stroke-width="4"/>
+    <!-- Ruchka -->
+    <polygon points="25.7,36.3 94.1,114.3 103.9,105.7 35.5,27.7" fill="#eceff4" stroke="#2b1a4f" stroke-width="3.5"/>
+    <polygon points="20,20 26.9,35.3 34.4,28.7" fill="#3a3550" stroke="#2b1a4f" stroke-width="2.5" stroke-linejoin="round"/>
+    <line x1="44" y1="57" x2="54" y2="48" stroke="#9aa3b5" stroke-width="5"/>
+    <!-- Musht -->
+    <ellipse cx="128" cy="138" rx="60" ry="50" transform="rotate(41 128 138)" fill="#f2c28c" stroke="#2b1a4f" stroke-width="4"/>
+    <path d="M150 104 q22 18 18 44" fill="none" stroke="#2b1a4f" stroke-width="3" stroke-linecap="round" opacity=".55"/>
+    <path d="M168 120 q16 16 12 36" fill="none" stroke="#2b1a4f" stroke-width="3" stroke-linecap="round" opacity=".45"/>
+    <!-- Bosh barmoq -->
+    <ellipse cx="94" cy="114" rx="30" ry="17" transform="rotate(43 94 114)" fill="#f2c28c" stroke="#2b1a4f" stroke-width="4"/>
+    <ellipse cx="78" cy="98" rx="7" ry="5" transform="rotate(43 78 98)" fill="#f8d9b5"/>
+  </svg>
+  <div id="fade"></div>
+</div>
+<script type="module">
+  for (const f of ['700 40px Kalam', '400 40px "Patrick Hand"']) await document.fonts.load(f, 'AO‘ʼ’Q');
+  const s = new URLSearchParams(location.search).get('s') || 'demo';
+  const { default: scene } = await import(`./${s}.js`);
+  const { mount } = await import('./engine.js');
+  mount(scene);
+</script>
+</body>
+</html>
